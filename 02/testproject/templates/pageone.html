@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratatouille</title>
+
+  <!-- 外部 CSS -->
+  <link rel="stylesheet" href="{% static 'pageone.css' %}">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poetsen+One&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header Section -->
+ <header class="header1">
+    <div class="container">
+      <div class="logo-container">
+        <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img" />
+        <h1 class="title">Ratatouille</h1>
+      </div>
+      <nav class="nav">
+                <a href="{% url 'pageone' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </nav>
+    <div class="d-flex align-items-center">
+        {% if request.user.is_authenticated %}
+        <div class="user-dropdown dropdown ms-4">
+          <button class="btn user-toggle dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ request.user.username }}
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li>
+              <form method="POST" action="{% url 'logout' %}" class="dropdown-item p-0 m-0">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-link dropdown-item">Logout</button>
+              </form>
+            </li>
+          </ul>
+        </div>
+        {% else %}
+        <div class="auth-buttons">
+          <a href="{% url 'login' %}" class="btn login">Login</a>
+          <a href="{% url 'register' %}" class="btn register">Sign in</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <!-- Slider Section -->
+  <div class="slider-container">
+    <div class="slides">
+      <img src="{% static 'image/food1.jpg' %}" alt="Slide 1">
+      <div class="overlay"></div>
+    </div>
+    <div class="slides">
+      <img src="{% static 'image/food2.jpg' %}" alt="Slide 2">
+      <div class="overlay"></div>
+    </div>
+    <div class="slides">
+      <img src="{% static 'image/food3.jpg' %}" alt="Slide 3">
+      <div class="overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1>Best food</h1>
+      <h1>for your taste</h1>
+      <h2>discover the recipe from here</h2>
+      {% if request.user.is_authenticated %}
+        <a href="{% url 'pagetwo' %}" class="start-button">Let Start</a>
+      {% else %}
+        <a href="{% url 'login' %}?next={% url 'pageone' %}" class="start-button">Let Start</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slides");
+
+    function showSlides() {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slides[slideIndex].classList.add("active");
+      slideIndex = (slideIndex + 1) % slides.length;
+      setTimeout(showSlides, 4000);
+    }
+
+    showSlides();
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
