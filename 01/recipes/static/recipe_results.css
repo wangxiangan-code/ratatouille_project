@@ -1,0 +1,108 @@
+/*Reset 基本設定*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 全站字型與背景 */
+/* recipe_results.css */
+
+body {
+    font-family: "微軟正黑體", sans-serif;
+    background: linear-gradient(135deg, #fff7f0, #ffeedd);
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: #d94f30;
+    margin-bottom: 40px;
+    font-size: 40px;
+    text-shadow: 2px 2px #ffd4b2;
+}
+
+#results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.recipe-card {
+    background-color: #fffaf4;
+    border: 3px solid #ffccaa;
+    border-radius: 20px;
+    width: 250px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: transform 0.35s, box-shadow 0.35s;
+    position: relative;
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.recipe-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.recipe-image {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #ffd8ba;
+}
+
+.recipe-info {
+    padding: 20px;
+}
+
+.recipe-info h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #3e3e3e;
+    text-shadow: 1px 1px #ffe3d0;
+}
+
+/* 小icon放在食譜卡角落 */
+.recipe-card::before {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 24px;
+}
+
+.no-result {
+    font-size: 20px;
+    color: #aaa;
+    margin-top: 30px;
+}
+
+a.return-btn {
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff7f50;
+    padding: 12px 24px;
+    border-radius: 15px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+a.return-btn:hover {
+    background-color: #e86340;
+}
+
+/* 簡單Ratatouille風 footer */
+footer {
+    margin-top: 60px;
+    color: #888;
+    font-size: 14px;
+}
