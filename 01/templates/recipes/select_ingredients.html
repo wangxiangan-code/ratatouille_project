@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingredient Selector</title>
+  <link rel="stylesheet" href="{% static 'select_ingredients.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo-container">
+        <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img"/>
+        <h1 class="title">Ratatouille</h1>
+      </div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="auth-buttons">
+        <a href="#" class="btn login">Login</a>
+        <a href="#" class="btn register">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container_1">
+    <h1>請選擇你的食材</h1>
+
+    <form method="get" action="{% url 'recipe_results' %}">
+      <div class="column">
+        <!-- <div class="column-header"> -->
+          <h2>肉類</h2>
+          <!-- <img src="{% static 'image/男主角.png' %}" alt="肉類圖片" class="category-icon" />
+        </div> -->
+        {% for item in meat_items %}
+          <label><input type="checkbox" name="ingredients" value="{{ item }}"> {{ item }}</label>
+        {% endfor %}
+      </div>
+
+      <div class="column">
+        <h2>蔬菜</h2>
+        {% for item in vegetable_items %}
+          <label><input type="checkbox" name="ingredients" value="{{ item }}"> {{ item }}</label>
+        {% endfor %}
+      </div>
+
+      <div class="column">
+        <h2>海鮮</h2>
+        {% for item in seafood_items %}
+          <label><input type="checkbox" name="ingredients" value="{{ item }}"> {{ item }}</label>
+        {% endfor %}
+      </div>
+
+      <div class="column">
+        <h2>其他</h2>
+        {% for item in other_items %}
+          <label><input type="checkbox" name="ingredients" value="{{ item }}"> {{ item }}</label>
+        {% endfor %}
+      </div>
+
+      <div class="submit-area">
+        <button type="submit">查看推薦食譜</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

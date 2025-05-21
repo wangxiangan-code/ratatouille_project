@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratatouille</title>
+    <link rel="stylesheet" href="{% static 'style01.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'recipe_img/0000000.png' %}">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <div class="logo-container">
+            <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img"/>
+            <h1 class="title">Ratatouille</h1>
+        </div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" class="btn login">Login</a>
+            <a href="#" class="btn register">Sign in</a>
+        </div>
+    </div>
+</header>
+    
+    <section class="recipes">
+        <div class="container">
+            <div class="recipe-card">
+                <img src="{% static 'image/curry-chicken-rice.jpg' %}"alt="Delicious Dish" class="recipe-img" width="100%">
+            </div>
+                <div class="recipe-details">
+                    <h3>咖哩雞肉飯</h3>
+                    <p class="text-alignn">小孩喜歡吃蒸蛋</p>
+                        
+                    <h4>食材:</h4>
+                    <ul>
+                        <li><span>馬鈴薯</span><span>2顆</span></li>
+                        <li><span>雞胸肉</span><span>2塊</span></li>
+                        <li><span>蒜頭</span><span>4顆</span></li>
+                        <li><span>紅蘿蔔</span><span>1根</span></li>
+                        <li><span>洋蔥</span><span>1/2顆</span></li>
+                        <li><span>白米飯</span><span>1大鍋</span></li>
+                        <li><span>醬油</span><span>1匙</span></li>
+                        <li><span>胡椒</span><span>酌量</span></li>
+                        <li><span>米酒</span><span>適量</span></li>
+                    <h4>料理步驟:</h4>
+                    <ol class="recipe-steps">
+                        <li>馬鈴薯、紅蘿蔔切塊，用電鍋蒸稍軟及熟</li>
+                        <li>雞肉切塊醃約20分鐘,洋蔥切丁、蒜頭切小小丁</li>
+                        <li>加入橄欖油，下洋蔥、蒜頭爆香</li>
+                        <li>下雞肉炒至變白，加入約7碗水（依所煮量判斷），再加入蒸熟的馬鈴薯+蘿蔔，中小火煮沸</li>
+                       </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Recipe Carousel Section -->
+<section class="carousel">
+    <h2 class="section-title">為您推薦</h2>
+    <div class="carousel-track">
+        <a href="{% url 'recipe_detail' slug='tomato-egg' %}" class="card">
+            <img src="{% static 'recipe_img/番茄炒蛋.jpg' %}" alt="番茄炒蛋">
+            <h3>番茄炒蛋</h3>
+            <p class="carousel-desc">最近的牛番茄物美價廉，把經典的家常菜番茄炒蛋變成一餐。</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/pasta03.jpg' %}" alt="Whole roasted chicken">
+            <h3>Whole roasted chicken with lemon and shallots</h3>
+            <p class="carousel-desc">1h 55m</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/recipe3.jpg' %}" alt="Dim sim sausage rolls">
+            <h3>Dim sim sausage rolls recipe</h3>
+            <p class="carousel-desc">55m</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/recipe4.jpg' %}" alt="Lemon cream dessert">
+            <h3>Lemon cream dessert</h3>
+            <p class="carousel-desc">1h 15m</p>
+        </a>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="logo">Ratatouille</div>
+        <div class="social-icons">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-youtube"></a>
+        </div>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="copyright">
+            &copy; Ratatouille 2025. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

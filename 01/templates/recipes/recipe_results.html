@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>推薦食譜</title>
+    <link rel="stylesheet" href="{% static 'recipe_results.css' %}">
+
+</head>
+<body>
+  <h1>推薦的食譜</h1>
+  <div id="results-container">
+      {% if recipes %}
+          {% for recipe in recipes %}
+              <div class="recipe-card">
+                  <a href="{% url ''}"></a>
+                  <a href="http://127.0.0.1:8000/recipe/{{ recipe.slug }}" target="_blank">
+                      <img src="{% static recipe.image %}" alt="{{ recipe.name }}" class="recipe-image">
+                      <div class="recipe-info">
+                          <h3>{{ recipe.name }}</h3>
+                      </div>
+                  </a>
+              </div>
+          {% endfor %}
+      {% else %}
+          <p class="no-result">沒有符合的食譜哦～</p>
+      {% endif %}
+  </div>
+
+<a href="{% url 'select_ingredients' %}" class="return-btn">回到食材選單</a>
+
+</body>
+</html>
