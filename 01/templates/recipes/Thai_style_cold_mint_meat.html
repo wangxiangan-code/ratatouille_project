@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratatouille</title>
+    <link rel="stylesheet" href="{% static 'style01.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'recipe_img/0000000.png' %}">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <div class="logo-container">
+            <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img"/>
+            <h1 class="title">Ratatouille</h1>
+        </div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" class="btn login">Login</a>
+            <a href="#" class="btn register">Sign in</a>
+        </div>
+    </div>
+</header>
+    
+    <section class="recipes">
+        <div class="container">
+            <div class="recipe-card">
+                <img src="{% static 'image/Thai_style_cold_mint_meat.jpg' %}"alt="Delicious Dish" class="recipe-img" width="100%">
+            </div>
+                <div class="recipe-details">
+                    <h3>泰式涼拌薄荷肉</h3>
+                    <p class="text-alignn">香辣開胃、薄荷提鮮，一口下去瞬間解膩超過癮！</p>
+                    <h4>食材:</h4>
+                    <ul>
+                        <li><span>豬後腿絞肉 </span><span>300克</span></li>
+                        <li><span>辣椒 </span><span>40克</span></li>
+                        <li><span>生薑 </span><span>40克</span></li>
+                        <li><span>紅洋蔥 </span><span>40克</span></li>
+                        <li><span>檸檬汁 </span><span>20ml</span></li>
+                        <li><span>魚露</span><span>20ml</span></li>
+                        <li><span>香菜</span><span>1/2杯</span></li>
+                        <li><span>料理米酒</span><span>1茶匙</span></li>
+                        
+                    <h4>料理步驟:</h4>
+                    <ol class="recipe-steps">
+                        <li> 辣椒、生薑、紅洋蔥洗淨後切末，放入拌碗中</li>
+                        <li>香菜洗淨、瀝乾、切碎後備用</li>
+                        <li> 豬後腿絞肉用一小匙米酒抓醃約30分鐘去腥味</li>
+                        <li>豬後腿絞肉放入平底鍋，炒至出水完畢，豬肉金黃有香氣後取出放涼</li>
+                        <li>將豬肉、辣椒、生薑、紅洋蔥、香菜、檸檬汁、魚露、鹽巴於碗中拌勻</li>    
+                
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Recipe Carousel Section -->
+<section class="carousel">
+    <h2 class="section-title">為您推薦</h2>
+    <div class="carousel-track">
+        <a href="{% url 'recipe_detail' slug='tomato-egg' %}" class="card">
+            <img src="{% static 'recipe_img/番茄炒蛋.jpg' %}" alt="番茄炒蛋">
+            <h3>番茄炒蛋</h3>
+            <p class="carousel-desc">最近的牛番茄物美價廉，把經典的家常菜番茄炒蛋變成一餐。</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/pasta03.jpg' %}" alt="Whole roasted chicken">
+            <h3>Whole roasted chicken with lemon and shallots</h3>
+            <p class="carousel-desc">1h 55m</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/recipe3.jpg' %}" alt="Dim sim sausage rolls">
+            <h3>Dim sim sausage rolls recipe</h3>
+            <p class="carousel-desc">55m</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/recipe4.jpg' %}" alt="Lemon cream dessert">
+            <h3>Lemon cream dessert</h3>
+            <p class="carousel-desc">1h 15m</p>
+        </a>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="logo">Ratatouille</div>
+        <div class="social-icons">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-youtube"></a>
+        </div>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="copyright">
+            &copy; Ratatouille 2025. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
