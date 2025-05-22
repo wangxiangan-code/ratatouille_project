@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratatouille</title>
+    <link rel="stylesheet" href="{% static 'style01.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'image/0000000.png' %}">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <div class="logo-container">
+            <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img"/>
+            <h1 class="title">Ratatouille</h1>
+        </div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" class="btn login">Login</a>
+            <a href="#" class="btn register">Sign in</a>
+        </div>
+    </div>
+</header>
+    
+    <section class="recipes">
+        <div class="container">
+            <div class="recipe-card">
+                <img src="{% static 'image/Dongpo_pork.jpg' %}"alt="Delicious Dish" class="recipe-img" width="100%">
+            </div>
+                <div class="recipe-details">
+                    <h3>東坡肉</h3>
+                    <p class="text-alignn">一碗米粥的溫柔，盛著大海的鮮味與細火慢燉的療癒。</p>
+                    <h4>食材:</h4>
+                    <ul>
+                        <li><span>整塊帶皮豬五花肉</span><span>1600g</span></li>
+                        <li><span>薑</span><span>5片</span></li>
+                        <li><span>八角 </span><span>5～6個</span></li>
+                        <li><span>桂皮</span><span>2支</span></li>
+                        <li><span>青蔥 </span><span>5～6支</span></li>
+                        <li><span>水 </span><span>1000cc</span></li>
+                        <li><span>醬油</span><span>160g</span></li>
+                        <li><span>冰糖</span><span>75g</span></li>
+                        <li><span>鹽</span><span>3/4茶匙</span></li>
+                        <li><span>紹興酒 </span><span>200cc</span></li>
+                        <li><span>綿繩</span><span>適量</span></li>
+                        
+                    <h4>料理步驟:</h4>
+                    <ol class="recipe-steps">
+                        <li>帶皮豬五花肉表面的毛清除乾淨，切成約7公分正方塊。</li>
+                        <li>每一塊豬五花肉塊用綿繩扎緊（避免熬煮過程散開）。</li>
+                        <li>煮沸一鍋水（份量外），將肉塊放入汆燙5～6分鐘至變色，撈起。</li>
+                        <li>青蔥用綿繩綁成一束。</li>
+                        <li>將水1000c.c.倒入鍋中，加入所有調味料</li>
+                        <li>再將薑片、八角、桂皮及青蔥放入煮至沸騰。</li>
+                        <li>放入豬肉塊。</li>
+                        <li>蓋上蓋子，以小火熬煮1～2小時，至湯汁收乾到剩下約1/2份量。</li>
+                        <li>將剩下一半的紹興酒均勻淋灑在肉塊上，以小火繼續熬煮1小時，至湯汁收乾到剩下約1/4份量。</li>
+                        <li>肉塊與湯汁盛起放入碗中，淋上1大匙紹興酒（份量外）。</li>
+                        <li>放入蒸籠中，以大火蒸1～2小時至肉完全酥爛即可。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Recipe Carousel Section -->
+<section class="carousel">
+    <h2 class="section-title">為您推薦</h2>
+    <div class="carousel-track">
+        <a href="{% url 'recipe_detail' slug='tomato-egg' %}" class="card">
+            <img src="{% static 'recipe_img/番茄炒蛋.jpg' %}" alt="番茄炒蛋">
+            <h3>番茄炒蛋</h3>
+            <p class="carousel-desc">最近的牛番茄物美價廉，把經典的家常菜番茄炒蛋變成一餐。</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/pasta03.jpg' %}" alt="Whole roasted chicken">
+            <h3>Whole roasted chicken with lemon and shallots</h3>
+            <p class="carousel-desc">1h 55m</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/recipe3.jpg' %}" alt="Dim sim sausage rolls">
+            <h3>Dim sim sausage rolls recipe</h3>
+            <p class="carousel-desc">55m</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/recipe4.jpg' %}" alt="Lemon cream dessert">
+            <h3>Lemon cream dessert</h3>
+            <p class="carousel-desc">1h 15m</p>
+        </a>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="logo">Ratatouille</div>
+        <div class="social-icons">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-youtube"></a>
+        </div>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="copyright">
+            &copy; Ratatouille 2025. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
