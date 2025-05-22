@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratatouille</title>
+    <link rel="stylesheet" href="{% static 'style01.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'image/0000000.png' %}">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poetsen+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <div class="container">
+        <div class="logo-container">
+            <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img"/>
+            <h1 class="title">Ratatouille</h1>
+        </div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" class="btn login">Login</a>
+            <a href="#" class="btn register">Sign in</a>
+        </div>
+    </div>
+</header>
+    
+    <section class="recipes">
+        <div class="container">
+            <div class="recipe-card">
+                <img src="{% static 'image/abalone_porridge.jpg' %}"alt="Delicious Dish" class="recipe-img" width="100%">
+            </div>
+                <div class="recipe-details">
+                    <h3>鮑魚粥</h3>
+                    <p class="text-alignn">一碗米粥的溫柔，盛著大海的鮮味與細火慢燉的療癒。</p>
+                    <h4>食材:</h4>
+                    <ul>
+                        <li><span>去殼鮑魚肉 </span><span>200 克</span></li>
+                        <li><span>中里肌肉 </span><span>200 克</span></li>
+                        <li><span>白飯 </span><span>1.5 碗</span></li>
+                        <li><span>青蔥</span><span>1/2 根</span></li>
+                        <li><span>皮蛋 </span><span>1 顆</span></li>
+                        <li><span>油蔥酥</span><span>1.5 大匙</span></li>
+                        <li><span>白胡椒粉</span><span>1/3 小匙</span></li>
+                        <li><span>鹽</span><span>1/3 小匙</span></li>
+                        
+                    <h4>料理步驟:</h4>
+                    <ol class="recipe-steps">
+                        <li>前一天先洗米用電鍋煮飯，放涼，冷凍冰一晚。</li>
+                        <li>白飯加熱水加皮蛋（切塊）蓋鍋熬粥。</li>
+                        <li>熬粥時間開始備料，豬肉片洗過順紋剪條，用醃料抓醃放10分鐘。</li>
+                        <li>鮑魚清肉每顆洗淨備用。</li>
+                        <li>青蔥洗淨剪末。</li>
+                        <li>粥略滾時加（油蔥酥、白胡椒粉、鹽）調味。</li>
+                        <li>粥滾起，把（肉條）加進鍋中，攪拌一下，煮至粥再次滾起。</li>
+                        <li>把（鮑魚肉）加進鍋中，蓋鍋煮至粥再次滾起，熄火，完成啦。</li>
+                        <li>偷吃步熬粥輕鬆自在又好吃</li>
+                        <li>用皮蛋、油蔥酥熬粥底，簡單就有好味粥。</li>
+                        <li>鮑魚肉很容易熟不用煮太久呦。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Recipe Carousel Section -->
+<section class="carousel">
+    <h2 class="section-title">為您推薦</h2>
+    <div class="carousel-track">
+        <a href="{% url 'recipe_detail' slug='tomato-egg' %}" class="card">
+            <img src="{% static 'recipe_img/番茄炒蛋.jpg' %}" alt="番茄炒蛋">
+            <h3>番茄炒蛋</h3>
+            <p class="carousel-desc">最近的牛番茄物美價廉，把經典的家常菜番茄炒蛋變成一餐。</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/pasta03.jpg' %}" alt="Whole roasted chicken">
+            <h3>Whole roasted chicken with lemon and shallots</h3>
+            <p class="carousel-desc">1h 55m</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/recipe3.jpg' %}" alt="Dim sim sausage rolls">
+            <h3>Dim sim sausage rolls recipe</h3>
+            <p class="carousel-desc">55m</p>
+        </a>
+        <a href="#" class="card">
+            <img src="{% static 'recipe_img/recipe4.jpg' %}" alt="Lemon cream dessert">
+            <h3>Lemon cream dessert</h3>
+            <p class="carousel-desc">1h 15m</p>
+        </a>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="logo">Ratatouille</div>
+        <div class="social-icons">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-youtube"></a>
+        </div>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="copyright">
+            &copy; Ratatouille 2025. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
