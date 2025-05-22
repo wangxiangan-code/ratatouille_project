@@ -14,8 +14,7 @@
 </head>
 <body>
 
-<!-- Header Section -->
-<header class="header1">
+<header class="header">
     <div class="container">
       <div class="logo-container">
         <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img" />
@@ -59,26 +58,25 @@
         </div>
     </section>
 
-        <!-- Recipe Carousel Section -->
 <section class="carousel">
     <h2 class="section-title">為您推薦</h2>
     <div class="carousel-track">
-        <a href="http://127.0.0.1:8000/recipe/abalone-porridge" class="鮑魚粥">
+        <a href="http://127.0.0.1:8000/recipe/abalone-porridge" class="card">
             <img src="{% static 'image/abalone_porridge.jpg' %}" alt="鮑魚粥">
             <h3>鮑魚粥</h3>
             <p class="carousel-desc">一碗米粥的溫柔，盛著大海的鮮味與細火慢燉的療癒。</p>
         </a>
-        <a href="http://127.0.0.1:8000/recipe/Crispy_Fried_Pumpkin_Strips" class="脆炒南瓜絲">
+        <a href="http://127.0.0.1:8000/recipe/Crispy_Fried_Pumpkin_Strips" class="card">
             <img src="{% static 'image/Crispy_Fried_Pumpkin_Strips.jpg' %}" alt="Whole roasted chicken">
             <h3>脆炒南瓜絲</h3>
             <p class="carousel-desc">製作簡單，營養豐富，味道鮮美。</p>
         </a>
-        <a href="http://127.0.0.1:8000/recipe/Cream_of_corn" class="玉米濃湯">
+        <a href="http://127.0.0.1:8000/recipe/Cream_of_corn" class="card">
             <img src="{% static 'image/Cream_of_corn_soup.jpg' %}" alt="Just a pigture">
             <h3>玉米濃湯</h3>
             <p class="carousel-desc">玉米濃湯是常見的家常湯品，每個家庭都有自己的喜歡用料配比。</p>
         </a>
-        <a href="http://127.0.0.1:8000/recipe/Garlic_Squid" class="Garlic_Squid">
+        <a href="http://127.0.0.1:8000/recipe/Garlic_Squid" class="card">
             <img src="{% static 'image/Garlic_Squid.jpg' %}" alt="What do u mean">
             <h3>蒜蓉魷魚</h3>
             <p class="carousel-desc">好吃到光碟，嚼勁口感！</p>
@@ -86,15 +84,14 @@
     </div>
 </section>
 
-<!-- Footer Section -->
 <footer>
     <div class="container">
         <div class="logo">Ratatouille</div>
         <div class="social-icons">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-google"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-youtube"></a>
+            <a href="https://www.facebook.com/nigelngcomedy" class="fa fa-facebook"></a>
+            <a href="mailto:chinpin2004@gmail.com" class="fa fa-google"></a>
+            <a href="https://www.instagram.com/mrnigelng/" class="fa fa-instagram"></a>
+            <a href="https://www.youtube.com/@mrnigelng" class="fa fa-youtube"></a>
         </div>
         <div class="links">
                 <a href="{% url 'pageone' %}">Home</a>
