@@ -5,34 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ratatouille</title>
-
     <link rel="stylesheet" href="{% static 'style01.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="{% static 'recipe_img/0000000.png' %}">    
-
-    <!-- Google Fonts -->
+    <link rel="icon" type="image/png" href="{% static '/image/0000000.png' %}">   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Header Section -->
 <header class="header">
     <div class="container">
-        <div class="logo-container">
-            <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img"/>
-            <h1 class="title">Ratatouille</h1>
-        </div>
-        <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-        <div class="auth-buttons">
-            <a href="#" class="btn login">Login</a>
-            <a href="#" class="btn register">Sign in</a>
-        </div>
+      <div class="logo-container">
+        <img src="{% static 'image/mouse.png' %}" alt="logo" class="logo-img" />
+        <h1 class="title">Ratatouille</h1>
+      </div>
+      <nav class="nav">
+                <a href="{% url 'pageone' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </nav>
     </div>
 </header>
     
@@ -72,44 +64,43 @@
 <section class="carousel">
     <h2 class="section-title">為您推薦</h2>
     <div class="carousel-track">
-        <a href="{% url 'recipe_detail' slug='tomato-egg' %}" class="card">
-            <img src="{% static 'recipe_img/番茄炒蛋.jpg' %}" alt="番茄炒蛋">
-            <h3>番茄炒蛋</h3>
-            <p class="carousel-desc">最近的牛番茄物美價廉，把經典的家常菜番茄炒蛋變成一餐。</p>
+        <a href="http://127.0.0.1:8000/recipe/yuxiang-eggplant" class="card">
+            <img src="{% static 'image/yuxiang-eggplant.jpg' %}" alt="魚香茄子">
+            <h3>魚香茄子</h3>
+            <p class="carousel-desc">酸甜鹹香層層交疊，茄子入味不油膩，每一口都勾魂。</p>
         </a>
-        <a href="#" class="card">
-            <img src="{% static 'recipe_img/pasta03.jpg' %}" alt="Whole roasted chicken">
-            <h3>Whole roasted chicken with lemon and shallots</h3>
-            <p class="carousel-desc">1h 55m</p>
+        <a href="http://127.0.0.1:8000/recipe/corn-ham-scrambled-eggs" class="card">
+            <img src="{% static 'image/Corn_ham_and_scrambled_eggs.jpg' %}" alt="Whole roasted chicken">
+            <h3>玉米火腿炒蛋</h3>
+            <p class="carousel-desc">很好吃</p>
         </a>
-        <a href="#" class="card">
-            <img src="{% static 'recipe_img/recipe3.jpg' %}" alt="Dim sim sausage rolls">
-            <h3>Dim sim sausage rolls recipe</h3>
-            <p class="carousel-desc">55m</p>
+        <a href="http://127.0.0.1:8000/recipe/Korean_style_cold_seaweed_salad" class="card">
+            <img src="{% static 'image/Korean_style_cold_seaweed_salad.jpg' %}" alt="Just a pigture">
+            <h3>韓式涼拌海帶</h3>
+            <p class="carousel-desc">涼拌海帶芽可是韓式小菜中不可或缺的一角喔</p>
         </a>
-        <a href="#" class="card">
-            <img src="{% static 'recipe_img/recipe4.jpg' %}" alt="Lemon cream dessert">
-            <h3>Lemon cream dessert</h3>
-            <p class="carousel-desc">1h 15m</p>
+        <a href="http://127.0.0.1:8000/recipe/braised-eggplant" class="card">
+            <img src="{% static 'image/eggplant.jpg' %}" alt="超好吃">
+            <h3>紅燒茄子</h3>
+            <p class="carousel-desc">超好吃</p>
         </a>
     </div>
 </section>
 
-<!-- Footer Section -->
 <footer>
     <div class="container">
         <div class="logo">Ratatouille</div>
         <div class="social-icons">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-google"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-youtube"></a>
+            <a href="https://www.facebook.com/nigelngcomedy" class="fa fa-facebook"></a>
+            <a href="mailto:chinpin2004@gmail.com" class="fa fa-google"></a>
+            <a href="https://www.instagram.com/mrnigelng/" class="fa fa-instagram"></a>
+            <a href="https://www.youtube.com/@mrnigelng" class="fa fa-youtube"></a>
         </div>
         <div class="links">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
-        </div>
+                <a href="{% url 'pageone' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </div>
         <div class="copyright">
             &copy; Ratatouille 2025. All rights reserved.
         </div>
